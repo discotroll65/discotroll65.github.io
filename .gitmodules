@@ -1,3 +1,6 @@
 [submodule "terminal_chess"]
 	path = terminal_chess
 	url = https://github.com/discotroll65/terminal_chess.git
+[submodule "rubiks_tiles"]
+	path = rubiks_tiles
+	url = https://github.com/discotroll65/rubiks_tiles.git
