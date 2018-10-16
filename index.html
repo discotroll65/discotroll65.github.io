@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+    <script src="lib/javascripts/jquery-2.1.4.min.js"></script>
+    <script src="lib/javascripts/cell.js"></script>
+    <script src="lib/javascripts/face.js"></script>
+    <script src="lib/javascripts/game.js"></script>
+    <script src="lib/javascripts/axisRotations.js"></script>
+    <script src="lib/javascripts/F_Fi_B_BiMoves.js"></script>
+    <script src="lib/javascripts/Ri_R_L_LiMoves.js"></script>
+    <script src="lib/javascripts/U_Ui_D_DiMoves.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/stylesheets/custom.css">
+  </head>
+  <body>
+    <h1>Rubik's Tiles</h1>
+    <h3> This is a two dimensional Rubik's Cube.
+      <button class="scramble"
+        href="#">Scramble</button> the cube and click the
+         arrows and buttons below to manipulate the cube!
+    <h3>
+    <img class="hvr-glow controls top-controls" src="lib/images/UpArrow.gif"/>
+
+    <div class="canvas-row group">
+
+      <img class="hvr-glow controls left-controls" src="lib/images/LeftArrow.gif"/>
+
+      <canvas id="game-canvas" width="625" height="560"></canvas>
+
+      <img class="hvr-glow controls right-controls" src="lib/images/RightArrow.gif"/>
+    </div>
+
+    <div class="bottom-control-row group">
+      <img class="hvr-glow controls clockwise-controls"
+        src="lib/images/clockwise.gif"/>
+
+      <img class="hvr-glow controls bottom-controls"
+        src="lib/images/DownArrow.gif"/>
+
+      <img class="hvr-glow controls counterclockwise-controls"
+        src="lib/images/counterclockwise.gif"/>
+    </div>
+
+
+    <div class="buttons-container group">
+      <div class="button-group right-group group">
+        <img class="hvr-glow button R" src="lib/images/RMove.gif" />
+        <img class="hvr-glow button Ri" src="lib/images/RiMove.gif" />
+      </div>
+
+      <div class="button-group left-group group">
+        <img class="hvr-glow button L" src="lib/images/LMove.gif" />
+        <img class="hvr-glow button Li" src="lib/images/LiMove.gif" />
+      </div>
+
+      <div class="button-group bottom-group group">
+        <img class="hvr-glow button Bi" src="lib/images/BiMove.gif" />
+        <img class="hvr-glow button B" src="lib/images/BMove.gif" />
+      </div>
+    </div>
+    <div class="buttons-container group">
+
+      <div class="button-group down-group group">
+        <img class="hvr-glow button D" src="lib/images/DMove.gif" />
+        <img class="hvr-glow button Di" src="lib/images/DiMove.gif" />
+      </div>
+
+      <div class="button-group front-group group">
+        <img class="hvr-glow button F" src="lib/images/FMove.gif" />
+        <img class="hvr-glow button Fi" src="lib/images/FiMove.gif" />
+      </div>
+
+      <div class="button-group up-group group">
+        <img class="hvr-glow button Ui" src="lib/images/UiMove.gif" />
+        <img class="hvr-glow button U" src="lib/images/UMove.gif" />
+      </div>
+
+    </div>
+    <h3>
+      <a href="https://github.com/discotroll65" target="_blank">
+        Who made this?
+      </a>
+    </h3>
+  </body>
+  <script type="text/javascript">
+    $(function(){
+      var canvas = document.getElementById("game-canvas");
+      var ctx = canvas.getContext('2d');
+      var game = new RubiksTiles.Game(ctx);
+      game.handleClicks();
+      game.draw();
+      debugger
+
+    })
+  </script>
+  </html>
